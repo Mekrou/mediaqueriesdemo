@@ -6,6 +6,12 @@ h1 {
     font-size: 6em;
     text-align: center;
 }
+
+/* There are only three elements inside this nav. The first link
+   the unordered list, and the last link. That's how
+   we are able to style it the way it appears in the viewport.
+   With home on the left, sign-up on the right, and the ul in
+   the middle. */
 nav {
     font-size: 1.5em;
     display: flex;
@@ -19,7 +25,19 @@ ul,li {
     padding: 0;
 }
 
-@media (min-width: 800px) {
+ul {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 40%;
+}
+
+li {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+/* @media (min-width: 800px) {
     h1 {
         color: purple;
     }
@@ -29,10 +47,29 @@ ul,li {
     body {
         background-color: purple;
     }
-}
+} */
 
 /* @media (orientation: landscape) {
     h1 {
         font-size: 500px;
     }
 } */
+
+/* Responsive Nav Bar: */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+    nav, nav ul {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+/*iPhone SE*/
+@media (max-width: 576px) {
+    h1 {
+        font-size: 3em;
+    }
+}
